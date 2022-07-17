@@ -21,6 +21,7 @@ if os.path.isfile('env.py'):
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
+AUTH_TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates/allauth')
 
 if 'DEVELOPMENT' in os.environ:
     SITE_ID = 1
@@ -58,10 +59,13 @@ INSTALLED_APPS = [
     'django_extensions',
     "django_htmx",
     'widget_tweaks',
+    'crispy_forms',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.github',
+    'allauth.socialaccount.providers.google',
+    'allauth.socialaccount.providers.linkedin',
     # 'compressor',
 ]
 
@@ -83,7 +87,7 @@ ROOT_URLCONF = 'core.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [TEMPLATES_DIR, ],
+        'DIRS': [TEMPLATES_DIR, AUTH_TEMPLATES_DIR],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

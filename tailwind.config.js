@@ -4,7 +4,11 @@ module.exports = {
       './templates/**/*.html'
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        nunito: ['Nunito']
+      },
+    },
   },
   plugins: [],
 }

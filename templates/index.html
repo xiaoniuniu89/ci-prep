@@ -1,8 +1,12 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
+    {% if user.is_authenticated %}
+    <h2 class="text-center">Logged in as {{user.username}}</h2>
+    {% endif %}
+{% include 'partials/cta.html' %}
 
 
-{% include 'partials/hero.html' %}
+
 
 {% endblock content %}

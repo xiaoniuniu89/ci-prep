@@ -1,13 +1,8 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block content %}
 
 
-<h1 class="text-center">All auth starter</h1>
-{% if user.is_authenticated %}
-    <p class="text-red-500">Welcome {{user.username}}</p>
-{% endif %}
-
-
+{% include 'partials/hero.html' %}
 
 {% endblock content %}

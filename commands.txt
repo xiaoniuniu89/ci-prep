@@ -1,1 +1,9 @@
+python3 -m venv venv
+source venv/bin/activate
+
+pip3 install -r requirements.txt
+
+npm i
 npx tailwindcss -i ./static/src/input.css -o ./static/src/output.css --watch
+
+python3 manage.py runserver
